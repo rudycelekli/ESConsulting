@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES Consulting | Custom AI Solutions</title>
+  <meta name="description" content="Boutique AI consulting firm delivering end-to-end custom AI solutions. Trusted by OpenAI, Anthropic, x.AI, Chevron, and the Department of Defense.">
+  <meta name="theme-color" content="#0A0F1C">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Noise texture overlay (premium depth) -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- NAVIGATION                              -->
+  <!-- ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-icon">ES</span>
+        <span class="nav__logo-text">Consulting</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#clients" class="nav__link">Clients</a></li>
+        <li><a href="#why-us" class="nav__link">Why Us</a></li>
+        <li><a href="#case-studies" class="nav__link">Impact</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+      <a href="#contact" class="nav__cta">Get in Touch</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu__links">
+      <li><a href="#services" class="mobile-menu__link">Services</a></li>
+      <li><a href="#clients" class="mobile-menu__link">Clients</a></li>
+      <li><a href="#why-us" class="mobile-menu__link">Why Us</a></li>
+      <li><a href="#case-studies" class="mobile-menu__link">Impact</a></li>
+      <li><a href="#about" class="mobile-menu__link">About</a></li>
+      <li><a href="#contact" class="mobile-menu__link mobile-menu__link--cta">Get in Touch</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- HERO                                    -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="hero-canvas"></canvas>
+    <div class="hero__gradient-orb hero__gradient-orb--1"></div>
+    <div class="hero__gradient-orb hero__gradient-orb--2"></div>
+    <div class="hero__gradient-orb hero__gradient-orb--3"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge" data-animate data-delay="0">
+        <span class="hero__badge-dot"></span>
+        Boutique AI Consulting &mdash; End to End
+      </div>
+      <h1 class="hero__title word-reveal" data-animate data-delay="100">
+        We Build the AI Others Only Talk About
+      </h1>
+      <p class="hero__subtitle" data-animate data-delay="200">
+        We build custom AI systems for the organizations defining the future &mdash;
+        from the labs creating frontier models to the enterprises deploying them
+        at scale. Senior engineers. Direct access. No compromise.
+      </p>
+      <div class="hero__actions" data-animate data-delay="300">
+        <a href="#contact" class="btn btn--primary">Start a Conversation</a>
+        <a href="#services" class="btn btn--ghost">What We Build</a>
+      </div>
+      <div class="hero__ai-input" data-animate data-delay="400">
+        <div class="hero__ai-field-wrap">
+          <svg class="hero__ai-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="10" cy="10" r="7"/>
+            <path d="M10 7v6M7 10h6"/>
+          </svg>
+          <input class="hero__ai-field" id="hero-ai-input" type="text" placeholder="Ask our AI anything about custom AI solutions..." autocomplete="off">
+          <kbd class="hero__ai-kbd">&#8984;K</kbd>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator" data-animate data-delay="500">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CLIENT LOGOS                            -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="clients" id="clients">
+    <div class="clients__label" data-animate>TRUSTED BY INDUSTRY LEADERS</div>
+    <div class="marquee">
+      <div class="marquee__track">
+        <!-- First set -->
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+          <span class="client-logo-text">OpenAI</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>
+          <span class="client-logo-text">Anthropic</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+          <span class="client-logo-text">xAI</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.6 7.3L12 0 .4 7.3v9.4L12 24l11.6-7.3V7.3zM12 2.3l9.2 5.8-9.2 5.8-9.2-5.8L12 2.3zm-9.6 7.5l8.6 5.4v6.5l-8.6-5.4v-6.5zm10.6 11.9v-6.5l8.6-5.4v6.5l-8.6 5.4z"/></svg>
+          <span class="client-logo-text">Chevron</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="client-logo-text">DataRobot</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 3.848C5.223 3.848 0 7.298 0 12c0 4.702 5.224 8.152 12 8.152S24 16.702 24 12c0-4.702-5.223-8.152-12-8.152zm7.334 3.839c0 1.08-1.725 1.913-4.488 2.246-.26-2.58-1.005-4.279-1.963-4.913 2.948.184 6.45 1.227 6.45 2.667zM12 16.401c-.96 0-1.746-1.5-1.808-4.389.577.047 1.18.072 1.808.072.628 0 1.23-.025 1.807-.072-.061 2.89-.847 4.389-1.807 4.389zm0-6.308c-.59 0-1.155-.019-1.69-.054.261-1.728.92-3.15 1.69-3.15.77 0 1.428 1.422 1.689 3.15-.535.034-1.099.054-1.689.054zm-.882-5.075c-.956.633-1.706 2.333-1.964 4.915C6.391 9.6 4.665 8.767 4.665 7.687c0-1.44 3.504-2.49 6.453-2.669zM2.037 11.68a5.265 5.265 0 011.048-3.164c.27 1.547 2.522 2.881 5.972 3.37V12c0 3.772.879 6.203 2.087 6.97-5.107-.321-9.107-3.48-9.107-7.29zm10.823 7.29c1.207-.767 2.087-3.198 2.087-6.97v-.115c3.447-.488 5.704-1.826 5.972-3.37a5.26 5.26 0 011.049 3.165c-.004 3.81-4.008 6.969-9.109 7.29z"/></svg>
+          <span class="client-logo-text">Toyota Financial Services</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L1.61 7.55v9.9L12 24l10.39-6.55V7.55L12 0zm8.39 16.28L12 21.66l-8.39-5.38V8.72L12 3.34l8.39 5.38v7.56z"/><path d="M12 6.5l-5.5 3.5v5l5.5 3.5 5.5-3.5v-5L12 6.5zm3.5 7.37L12 16.15l-3.5-2.28v-3.74L12 7.85l3.5 2.28v3.74z"/></svg>
+          <span class="client-logo-text">Dept. of Defense</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 3C10.5 3 7.5 6 7.5 6S4.5 3 1.5 3C.67 3 0 3.67 0 4.5 0 9 4.5 13.5 7.5 15c3-1.5 7.5-6 7.5-10.5C15 3.67 14.33 3 13.5 3h3zm3 0c-1.5 0-3 1.5-3 1.5s1.5 3 1.5 6c0 2.5-2 5-4.5 7 4-2 9-6 9-10.5C22.5 3.67 21.83 3 21 3h-1.5z"/><text x="0" y="22" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="600" fill="currentColor">Nestl&eacute; Mexico</text></svg>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+          <span class="client-logo-text">OpenAI</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>
+          <span class="client-logo-text">Anthropic</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+          <span class="client-logo-text">xAI</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.6 7.3L12 0 .4 7.3v9.4L12 24l11.6-7.3V7.3zM12 2.3l9.2 5.8-9.2 5.8-9.2-5.8L12 2.3zm-9.6 7.5l8.6 5.4v6.5l-8.6-5.4v-6.5zm10.6 11.9v-6.5l8.6-5.4v6.5l-8.6 5.4z"/></svg>
+          <span class="client-logo-text">Chevron</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="client-logo-text">DataRobot</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 3.848C5.223 3.848 0 7.298 0 12c0 4.702 5.224 8.152 12 8.152S24 16.702 24 12c0-4.702-5.223-8.152-12-8.152zm7.334 3.839c0 1.08-1.725 1.913-4.488 2.246-.26-2.58-1.005-4.279-1.963-4.913 2.948.184 6.45 1.227 6.45 2.667zM12 16.401c-.96 0-1.746-1.5-1.808-4.389.577.047 1.18.072 1.808.072.628 0 1.23-.025 1.807-.072-.061 2.89-.847 4.389-1.807 4.389zm0-6.308c-.59 0-1.155-.019-1.69-.054.261-1.728.92-3.15 1.69-3.15.77 0 1.428 1.422 1.689 3.15-.535.034-1.099.054-1.689.054zm-.882-5.075c-.956.633-1.706 2.333-1.964 4.915C6.391 9.6 4.665 8.767 4.665 7.687c0-1.44 3.504-2.49 6.453-2.669zM2.037 11.68a5.265 5.265 0 011.048-3.164c.27 1.547 2.522 2.881 5.972 3.37V12c0 3.772.879 6.203 2.087 6.97-5.107-.321-9.107-3.48-9.107-7.29zm10.823 7.29c1.207-.767 2.087-3.198 2.087-6.97v-.115c3.447-.488 5.704-1.826 5.972-3.37a5.26 5.26 0 011.049 3.165c-.004 3.81-4.008 6.969-9.109 7.29z"/></svg>
+          <span class="client-logo-text">Toyota Financial Services</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L1.61 7.55v9.9L12 24l10.39-6.55V7.55L12 0zm8.39 16.28L12 21.66l-8.39-5.38V8.72L12 3.34l8.39 5.38v7.56z"/><path d="M12 6.5l-5.5 3.5v5l5.5 3.5 5.5-3.5v-5L12 6.5zm3.5 7.37L12 16.15l-3.5-2.28v-3.74L12 7.85l3.5 2.28v3.74z"/></svg>
+          <span class="client-logo-text">Dept. of Defense</span>
+        </div>
+        <div class="marquee__item client-logo-group">
+          <svg class="client-logo-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 3C10.5 3 7.5 6 7.5 6S4.5 3 1.5 3C.67 3 0 3.67 0 4.5 0 9 4.5 13.5 7.5 15c3-1.5 7.5-6 7.5-10.5C15 3.67 14.33 3 13.5 3h3zm3 0c-1.5 0-3 1.5-3 1.5s1.5 3 1.5 6c0 2.5-2 5-4.5 7 4-2 9-6 9-10.5C22.5 3.67 21.83 3 21 3h-1.5z"/><text x="0" y="22" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="600" fill="currentColor">Nestl&eacute; Mexico</text></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- WHAT WE DO (3-pillar overview)          -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="what-we-do" id="what-we-do">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">End-to-End AI.<br><span class="text-accent">Nothing Off-the-Shelf.</span></h2>
+        <p class="section-subtitle">We don't resell APIs or deploy cookie-cutter models. Every solution is custom-built from the ground up for your specific problem, data, and scale.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar" data-animate data-delay="0">
+          <div class="pillar__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="24" r="18" stroke-dasharray="4 4"/>
+              <circle cx="24" cy="24" r="8"/>
+              <line x1="24" y1="6" x2="24" y2="12"/>
+              <line x1="24" y1="36" x2="24" y2="42"/>
+              <line x1="6" y1="24" x2="12" y2="24"/>
+              <line x1="36" y1="24" x2="42" y2="24"/>
+            </svg>
+          </div>
+          <h3 class="pillar__title">Strategy</h3>
+          <p class="pillar__desc">We identify where AI creates real value in your business. No hype, no buzzwords &mdash; just clear, executable roadmaps backed by deep technical due diligence.</p>
+        </div>
+
+        <div class="pillar" data-animate data-delay="150">
+          <div class="pillar__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="8" y="8" width="32" height="32" rx="4"/>
+              <line x1="16" y1="18" x2="32" y2="18"/>
+              <line x1="16" y1="24" x2="28" y2="24"/>
+              <line x1="16" y1="30" x2="24" y2="30"/>
+              <circle cx="36" cy="36" r="8" fill="currentColor" opacity="0.15"/>
+              <path d="M33 36l2 2 4-4" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="pillar__title">Build</h3>
+          <p class="pillar__desc">Our engineers build production-grade AI systems &mdash; custom models, data pipelines, LLM integrations, computer vision, and more. We write the code. We own the quality.</p>
+        </div>
+
+        <div class="pillar" data-animate data-delay="300">
+          <div class="pillar__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 36V20l12-12 12 12v16"/>
+              <path d="M6 42h36"/>
+              <circle cx="24" cy="28" r="6"/>
+              <path d="M24 22v12M18 28h12" stroke-width="1"/>
+            </svg>
+          </div>
+          <h3 class="pillar__title">Deploy</h3>
+          <p class="pillar__desc">We take AI from prototype to production. MLOps, monitoring, scaling, security &mdash; we ensure your AI systems run reliably at enterprise scale, every single day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SERVICES (Bento Grid)                   -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">What We Build</span>
+        <h2 class="section-title">Custom AI for<br><span class="text-accent">Every Challenge</span></h2>
+      </div>
+
+      <div class="bento">
+        <div class="bento__card bento__card--featured" data-animate data-delay="0">
+          <span class="bento__number">01</span>
+          <h3 class="bento__title">Foundation Models & GenAI</h3>
+          <p class="bento__desc">From pre-training custom models to fine-tuning frontier architectures for domain-specific performance. RAG systems, AI agents, and enterprise GenAI platforms &mdash; we work at the layer where AI capability is created, not just consumed.</p>
+          <div class="bento__tags">
+            <span class="tag">GPT / Claude / Gemini</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Fine-Tuning</span>
+            <span class="tag">AI Agents</span>
+          </div>
+        </div>
+
+        <div class="bento__card" data-animate data-delay="100">
+          <span class="bento__number">02</span>
+          <h3 class="bento__title">Custom AI Applications</h3>
+          <p class="bento__desc">End-to-end custom applications built to integrate directly with your existing systems &mdash; ERPs, CRMs, data warehouses, and internal tools. Seamless, production-ready, and tailored to your workflows.</p>
+          <div class="bento__tags">
+            <span class="tag">System Integration</span>
+            <span class="tag">Custom Apps</span>
+            <span class="tag">API Design</span>
+          </div>
+        </div>
+
+        <div class="bento__card" data-animate data-delay="200">
+          <span class="bento__number">03</span>
+          <h3 class="bento__title">Predictive Analytics</h3>
+          <p class="bento__desc">Demand forecasting, risk modeling, anomaly detection, and decision intelligence systems that turn data into competitive advantage.</p>
+          <div class="bento__tags">
+            <span class="tag">Forecasting</span>
+            <span class="tag">Risk</span>
+            <span class="tag">Anomaly Detection</span>
+          </div>
+        </div>
+
+        <div class="bento__card" data-animate data-delay="100">
+          <span class="bento__number">04</span>
+          <h3 class="bento__title">AI Strategy & Roadmaps</h3>
+          <p class="bento__desc">Technical due diligence, AI readiness assessments, and multi-year transformation roadmaps for C-suite and boards.</p>
+          <div class="bento__tags">
+            <span class="tag">Due Diligence</span>
+            <span class="tag">Roadmaps</span>
+            <span class="tag">Executive Advisory</span>
+          </div>
+        </div>
+
+        <div class="bento__card" data-animate data-delay="200">
+          <span class="bento__number">05</span>
+          <h3 class="bento__title">MLOps & Infrastructure</h3>
+          <p class="bento__desc">Production ML pipelines, model monitoring, automated retraining, and cloud-native AI infrastructure that scales.</p>
+          <div class="bento__tags">
+            <span class="tag">Pipelines</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Cloud-Native</span>
+          </div>
+        </div>
+
+        <div class="bento__card" data-animate data-delay="300">
+          <span class="bento__number">06</span>
+          <h3 class="bento__title">AI Safety & Governance</h3>
+          <p class="bento__desc">Red-teaming, bias auditing, responsible AI frameworks, and compliance-ready AI governance for regulated industries.</p>
+          <div class="bento__tags">
+            <span class="tag">Red-Teaming</span>
+            <span class="tag">Governance</span>
+            <span class="tag">Compliance</span>
+          </div>
+        </div>
+
+        <div class="bento__card bento__card--featured" data-animate data-delay="100">
+          <span class="bento__number">07</span>
+          <h3 class="bento__title">Expert Data for Frontier Labs</h3>
+          <p class="bento__desc">We supply high-quality, expert-curated training data to the labs building frontier LLMs. Domain-specific datasets, RLHF annotations, red-team evaluations, and specialized corpora &mdash; built by subject-matter experts, not crowd workers. Trusted by the teams defining the next generation of AI.</p>
+          <div class="bento__tags">
+            <span class="tag">Training Data</span>
+            <span class="tag">RLHF</span>
+            <span class="tag">Expert Annotation</span>
+            <span class="tag">Frontier LLMs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- WHY US                                  -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <div class="why-us__layout">
+        <div class="why-us__left" data-animate>
+          <span class="section-label">The ES Difference</span>
+          <h2 class="section-title">Boutique by Design.<br><span class="text-accent">Enterprise by Impact.</span></h2>
+          <p class="section-subtitle">We stay small on purpose. The organizations building the future of AI trust us with their hardest problems. Here's why.</p>
+        </div>
+        <div class="why-us__right">
+          <div class="why-us__card" data-animate data-delay="0">
+            <div class="why-us__card-accent"></div>
+            <h3>Senior Engineers Only</h3>
+            <p>No juniors, no bench warmers. Every person on your project is a seasoned AI practitioner who's shipped production systems at scale.</p>
+          </div>
+          <div class="why-us__card" data-animate data-delay="100">
+            <div class="why-us__card-accent"></div>
+            <h3>Direct Access</h3>
+            <p>No account managers between you and the work. You talk directly to the engineers building your system. Decisions happen in hours, not weeks.</p>
+          </div>
+          <div class="why-us__card" data-animate data-delay="200">
+            <div class="why-us__card-accent"></div>
+            <h3>Elite Client Base</h3>
+            <p>We work with OpenAI, Anthropic, the Department of Defense, and Fortune 500 companies. The bar is high &mdash; and we clear it every time.</p>
+          </div>
+          <div class="why-us__card" data-animate data-delay="300">
+            <div class="why-us__card-accent"></div>
+            <h3>Results, Not Decks</h3>
+            <p>We deliver working AI systems, not 200-page strategy decks. If it doesn't run in production, we haven't finished the job.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CASE STUDIES / IMPACT                   -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="case-studies" id="case-studies">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Impact</span>
+        <h2 class="section-title">Numbers That<br><span class="text-accent">Speak for Themselves</span></h2>
+      </div>
+
+      <div class="cases">
+        <div class="case" data-animate data-delay="0">
+          <div class="case__industry">Energy</div>
+          <div class="case__metric"><span class="counter" data-target="40">0</span>x</div>
+          <div class="case__label">Faster anomaly detection</div>
+          <p class="case__desc">Built a real-time predictive maintenance system that reduced downtime by 40x for critical infrastructure operations.</p>
+        </div>
+
+        <div class="case" data-animate data-delay="100">
+          <div class="case__industry">Financial Services</div>
+          <div class="case__metric">$<span class="counter" data-target="12">0</span>M</div>
+          <div class="case__label">Annual savings generated</div>
+          <p class="case__desc">Deployed an AI-driven risk assessment platform that automated 85% of manual review processes across lending operations.</p>
+        </div>
+
+        <div class="case" data-animate data-delay="200">
+          <div class="case__industry">Defense</div>
+          <div class="case__metric"><span class="counter" data-target="85">0</span>%</div>
+          <div class="case__label">Faster intelligence processing</div>
+          <p class="case__desc">Engineered a multi-modal AI system for intelligence analysis, reducing processing time from days to hours.</p>
+        </div>
+
+        <div class="case" data-animate data-delay="300">
+          <div class="case__industry">Consumer Goods</div>
+          <div class="case__metric"><span class="counter" data-target="34">0</span>%</div>
+          <div class="case__label">Demand forecast improvement</div>
+          <p class="case__desc">Custom demand forecasting model that reduced waste and improved supply chain efficiency across Latin American markets.</p>
+        </div>
+      </div>
+
+      <div class="stats-bar" data-animate>
+        <div class="stat">
+          <span class="stat__number"><span class="counter" data-target="50">0</span>+</span>
+          <span class="stat__label">AI Systems Deployed</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number"><span class="counter" data-target="8">0</span></span>
+          <span class="stat__label">Fortune 500 Clients</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number"><span class="counter" data-target="99">0</span>%</span>
+          <span class="stat__label">Client Retention</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number"><span class="counter" data-target="15">0</span>+</span>
+          <span class="stat__label">Industries Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- INDUSTRIES                              -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="industries" id="industries">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-label">Industries</span>
+        <h2 class="section-title">AI Across<br><span class="text-accent">Every Sector</span></h2>
+      </div>
+      <div class="industries__grid" data-animate>
+        <div class="industry-chip">Defense & Intelligence</div>
+        <div class="industry-chip">Energy & Oil/Gas</div>
+        <div class="industry-chip">Financial Services</div>
+        <div class="industry-chip">Automotive</div>
+        <div class="industry-chip">Consumer Goods</div>
+        <div class="industry-chip">Healthcare</div>
+        <div class="industry-chip">Technology</div>
+        <div class="industry-chip">Manufacturing</div>
+        <div class="industry-chip">Retail & E-Commerce</div>
+        <div class="industry-chip">Telecommunications</div>
+        <div class="industry-chip">Insurance</div>
+        <div class="industry-chip">Logistics & Supply Chain</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CONTACT / CTA                           -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__layout">
+        <div class="contact__left" data-animate>
+          <span class="section-label">Let's Talk</span>
+          <h2 class="section-title">Let's Discuss<br><span class="text-accent">What's Possible.</span></h2>
+          <p class="section-subtitle">Tell us what you're building. We'll tell you exactly how we'd approach it &mdash; no sales pitch, no decks, no fluff.</p>
+          <div class="contact__info">
+            <a href="mailto:support@esconsulting.io" class="contact__link">support@esconsulting.io</a>
+            <span class="contact__location">Boston, MA</span>
+          </div>
+        </div>
+        <div class="contact__right" data-animate data-delay="150">
+          <form class="contact__form" id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" id="form-name" required placeholder=" ">
+              <label for="form-name">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="form-email" required placeholder=" ">
+              <label for="form-email">Work Email</label>
+            </div>
+            <div class="form-group">
+              <input type="text" name="company" id="form-company" placeholder=" ">
+              <label for="form-company">Company</label>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="form-message" rows="4" required placeholder=" "></textarea>
+              <label for="form-message">Tell us about your project</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Start a Conversation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FOOTER                                  -->
+  <!-- ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__layout">
+        <div class="footer__brand">
+          <span class="nav__logo-icon">ES</span>
+          <span class="nav__logo-text">Consulting</span>
+          <p class="footer__tagline">Custom AI. Uncommon results.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="#services">Services</a>
+            <a href="#case-studies">Impact</a>
+            <a href="#about">About</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="mailto:support@esconsulting.io">Email</a>
+            <a href="https://www.linkedin.com/company/esconsulting" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span id="year">2026</span> ES Consulting. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- AI ASSISTANT (Tambo mount point)        -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tambo-root"></div>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="/src/tambo/entry.tsx" defer></script>
+</body>
+</html>
