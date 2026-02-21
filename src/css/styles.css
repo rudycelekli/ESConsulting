@@ -683,31 +683,22 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-.client-logo-group {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--color-text);
-  opacity: 0.35;
+.client-logo {
+  height: 28px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.4;
+  filter: brightness(0) invert(1);
   transition: opacity var(--duration-fast) var(--ease-smooth);
 }
 
-.client-logo-group:hover {
-  opacity: 0.8;
+.client-logo:hover {
+  opacity: 0.85;
 }
 
-.client-logo-icon {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
-
-.client-logo-text {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+.client-logo--wide {
+  max-width: 200px;
 }
 
 /* ═══════════════════════════════════════════════════════

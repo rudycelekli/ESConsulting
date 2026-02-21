@@ -791,6 +791,334 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+/* ─── CHART DISPLAY ─── */
+.tambo-chart {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.tambo-chart__header h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F0F0EC;
+  margin-bottom: 0.25rem;
+}
+
+.tambo-chart__body {
+  margin-top: 1rem;
+}
+
+.tambo-chart__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tambo-chart__bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tambo-chart__bar-label {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  min-width: 70px;
+  text-align: right;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tambo-chart__bar-track {
+  flex: 1;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tambo-chart__bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 2px;
+}
+
+.tambo-chart__bar-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #F0F0EC;
+  min-width: 48px;
+  flex-shrink: 0;
+}
+
+.tambo-chart__svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.tambo-chart__svg--pie {
+  max-width: 180px;
+}
+
+.tambo-chart__axis-label {
+  font-size: 9px;
+  fill: #6B7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.tambo-chart__point-label {
+  font-size: 9px;
+  fill: #C8A45C;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+}
+
+.tambo-chart__donut-center {
+  font-size: 16px;
+  fill: #F0F0EC;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.tambo-chart__pie-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.tambo-chart__legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.tambo-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.tambo-chart__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tambo-chart__legend-label {
+  color: #9CA3AF;
+  flex: 1;
+}
+
+.tambo-chart__legend-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: #F0F0EC;
+}
+
+.tambo-chart__note {
+  font-size: 0.7rem;
+  color: #6B7280;
+  font-style: italic;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── COMPARISON TABLE ─── */
+.tambo-comparison {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.tambo-comparison__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F0F0EC;
+  margin-bottom: 1rem;
+}
+
+.tambo-comparison__scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.tambo-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.tambo-comparison__corner {
+  background: transparent;
+}
+
+.tambo-comparison__col-header {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: #F0F0EC;
+  padding: 0.75rem 0.6rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: bottom;
+}
+
+.tambo-comparison__col-header span { display: block; }
+.tambo-comparison__col-header small { display: block; font-size: 0.7rem; color: #6B7280; font-weight: 400; margin-top: 0.15rem; }
+
+.tambo-comparison__col-header--hl {
+  color: #C8A45C;
+  background: rgba(200, 164, 92, 0.06);
+  border-radius: 8px 8px 0 0;
+}
+
+.tambo-comparison__badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  border: 1px solid rgba(200, 164, 92, 0.3);
+  color: #C8A45C;
+  background: rgba(200, 164, 92, 0.1);
+  margin-top: 0.35rem;
+}
+
+.tambo-comparison__row-label {
+  font-weight: 500;
+  color: #9CA3AF;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+}
+
+.tambo-comparison__cell {
+  text-align: center;
+  padding: 0.6rem;
+  color: #D1D5DB;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.tambo-comparison__cell--hl {
+  background: rgba(200, 164, 92, 0.04);
+}
+
+.tambo-comparison__icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.tambo-comparison__icon--check { color: #22c55e; }
+.tambo-comparison__icon--cross { color: #6B7280; }
+
+.tambo-comparison__note {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1.5;
+}
+
+/* ─── STATS DASHBOARD ─── */
+.tambo-stats {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.tambo-stats__header h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F0F0EC;
+  margin-bottom: 0.25rem;
+}
+
+.tambo-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tambo-stats__card {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.tambo-stats__label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6B7280;
+  margin-bottom: 0.35rem;
+}
+
+.tambo-stats__value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.tambo-stats__value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #F0F0EC;
+  line-height: 1.2;
+}
+
+.tambo-stats__change {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.tambo-stats__change svg { width: 10px; height: 10px; }
+.tambo-stats__change--up { color: #22c55e; }
+.tambo-stats__change--down { color: #EF4444; }
+.tambo-stats__change--neutral { color: #6B7280; }
+
+.tambo-stats__desc {
+  display: block;
+  font-size: 0.7rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.tambo-stats__note {
+  font-size: 0.7rem;
+  color: #6B7280;
+  font-style: italic;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 640px) {
   .tambo-panel { width: 100%; border-left: none; }

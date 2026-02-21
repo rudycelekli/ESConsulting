@@ -4,34 +4,114 @@ import '../styles/tambo.css';
 
 const SUGGESTIONS = [
   'What AI services do you offer?',
-  'Show me case studies',
-  'How long does a project take?',
+  'Show me a chart of AI market growth',
+  'Compare GPT-4 vs Claude vs Gemini',
   "What's the ROI of AI?",
-  'Recommend a tech stack',
+  'Show me AI adoption stats',
   "I'd like to discuss a project",
 ];
+
+/**
+ * Render a single message's content blocks.
+ * Tambo messages have `content` as an array of typed blocks:
+ * - { type: 'text', text: string }
+ * - { type: 'component', renderedComponent: ReactElement }
+ * - { type: 'tool_use', ... }
+ * - { type: 'tool_result', ... }
+ * We render text blocks as text and component blocks as rendered React elements.
+ */
+function renderContentBlocks(content: unknown): React.ReactNode[] {
+  if (!content) return [];
+
+  // Handle array of content blocks (the standard Tambo format)
+  if (Array.isArray(content)) {
+    const nodes: React.ReactNode[] = [];
+
+    content.forEach((block: any, i: number) => {
+      // Text content block
+      if (block?.type === 'text' && typeof block.text === 'string' && block.text.trim()) {
+        nodes.push(
+          <div key={`text-${i}`} className="tambo-message__text">
+            {block.text}
+          </div>
+        );
+      }
+      // Component content block - rendered by Tambo SDK
+      else if (block?.type === 'component' && block.renderedComponent) {
+        nodes.push(
+          <div key={`comp-${i}`} className="tambo-component-wrapper">
+            {block.renderedComponent}
+          </div>
+        );
+      }
+      // Fallback: plain string in array
+      else if (typeof block === 'string' && block.trim()) {
+        nodes.push(
+          <div key={`str-${i}`} className="tambo-message__text">
+            {block}
+          </div>
+        );
+      }
+      // Fallback: object with content field
+      else if (typeof block?.content === 'string' && block.content.trim()) {
+        nodes.push(
+          <div key={`cnt-${i}`} className="tambo-message__text">
+            {block.content}
+          </div>
+        );
+      }
+    });
+
+    return nodes;
+  }
+
+  // Handle plain string content
+  if (typeof content === 'string' && content.trim()) {
+    return [<div key="text" className="tambo-message__text">{content}</div>];
+  }
+
+  // Handle single object with text
+  if (content && typeof content === 'object') {
+    const c = content as any;
+    if (typeof c.text === 'string' && c.text.trim()) {
+      return [<div key="text" className="tambo-message__text">{c.text}</div>];
+    }
+    if (typeof c.content === 'string' && c.content.trim()) {
+      return [<div key="text" className="tambo-message__text">{c.content}</div>];
+    }
+  }
+
+  return [];
+}
 
 export function AIPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const { messages, isStreaming } = useTambo();
   const { value, setValue, submit, isPending } = useTamboThreadInput();
   const threadRef = useRef<HTMLDivElement>(null);
+  const pendingQueryRef = useRef<string | null>(null);
 
   // Listen for external open events (from hero input bridge)
   useEffect(() => {
     const handler = ((e: CustomEvent<{ query: string }>) => {
       setIsOpen(true);
       if (e.detail?.query) {
-        setTimeout(() => {
-          setValue(e.detail.query);
-          submit();
-        }, 400);
+        pendingQueryRef.current = e.detail.query;
+        setValue(e.detail.query);
       }
     }) as EventListener;
 
     window.addEventListener('tambo:submit-query', handler);
     return () => window.removeEventListener('tambo:submit-query', handler);
-  }, [setValue, submit]);
+  }, [setValue]);
+
+  // Submit once value is set from bridge
+  useEffect(() => {
+    if (pendingQueryRef.current && value === pendingQueryRef.current && !isPending) {
+      pendingQueryRef.current = null;
+      submit();
+    }
+  }, [value, submit, isPending]);
 
   // Keyboard shortcut (Ctrl+K / Cmd+K)
   useEffect(() => {
@@ -66,6 +146,9 @@ export function AIPanel() {
     setValue(text);
     setTimeout(() => submit(), 50);
   };
+
+  // Filter out system messages from display
+  const visibleMessages = messages.filter((msg) => msg.role !== 'system');
 
   return (
     <>
@@ -106,7 +189,7 @@ export function AIPanel() {
 
         {/* Thread */}
         <div className="tambo-thread" ref={threadRef}>
-          {messages.length === 0 && (
+          {visibleMessages.length === 0 && (
             <div className="tambo-welcome">
               <div className="tambo-welcome__icon">
                 <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -116,23 +199,29 @@ export function AIPanel() {
                 </svg>
               </div>
               <h3>Ask us anything about AI</h3>
-              <p>I can show you our services, case studies, project timelines, tech recommendations, and help you get in touch.</p>
+              <p>I can show you charts, comparisons, dashboards, services, case studies, timelines, and more — all rendered as interactive components.</p>
             </div>
           )}
 
-          {messages.map((msg) => (
-            <div key={msg.id} className={`tambo-message tambo-message--${msg.role}`}>
-              {msg.role === 'assistant' && msg.renderedComponent ? (
-                <div className="tambo-component-wrapper">
-                  {msg.renderedComponent}
-                </div>
-              ) : (
-                <div className="tambo-message__text">
-                  {typeof msg.content === 'string' ? msg.content : null}
-                </div>
-              )}
-            </div>
-          ))}
+          {visibleMessages.map((msg) => {
+            const blocks = renderContentBlocks(msg.content);
+
+            // Also check message-level renderedComponent (some Tambo versions)
+            const msgRendered = (msg as any).renderedComponent;
+
+            if (blocks.length === 0 && !msgRendered) return null;
+
+            return (
+              <div key={msg.id} className={`tambo-message tambo-message--${msg.role}`}>
+                {msgRendered && (
+                  <div className="tambo-component-wrapper">
+                    {msgRendered}
+                  </div>
+                )}
+                {blocks}
+              </div>
+            );
+          })}
 
           {isStreaming && (
             <div className="tambo-message tambo-message--assistant">
@@ -144,7 +233,7 @@ export function AIPanel() {
         </div>
 
         {/* Suggestions (show only when empty) */}
-        {messages.length === 0 && (
+        {visibleMessages.length === 0 && (
           <div className="tambo-suggestions">
             {SUGGESTIONS.map((s) => (
               <button key={s} className="tambo-suggestion-chip" onClick={() => handleSuggestion(s)}>
