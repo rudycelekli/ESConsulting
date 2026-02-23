@@ -56,13 +56,13 @@
 .tambo-panel__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1099;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  backdrop-filter: blur(4px) saturate(150%);
-  -webkit-backdrop-filter: blur(4px) saturate(150%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .tambo-panel__backdrop.is-visible {
@@ -79,15 +79,15 @@
   height: 100vh;
   height: 100dvh;
   z-index: 1100;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.92);
   border-left: 1px solid rgba(255, 255, 255, 0.8);
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
-  box-shadow: -8px 0 32px rgba(31, 38, 135, 0.15), inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  box-shadow: -8px 0 32px rgba(31, 38, 135, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .tambo-panel.is-open {
@@ -100,11 +100,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
-  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 4px rgba(31, 38, 135, 0.04);
 }
 
 .tambo-panel__title-row {
@@ -219,17 +217,15 @@
 }
 
 .tambo-message--assistant .tambo-message__text {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: #F5F5F7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   color: #1D1D1F;
   padding: 0.75rem 1rem;
   border-radius: 16px 16px 16px 4px;
   max-width: 90%;
   font-size: 0.9rem;
   line-height: 1.6;
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
-  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.08), inset 0 4px 12px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.06);
 }
 
 /* ─── COMPONENT WRAPPERS ─── */
@@ -238,23 +234,20 @@
 }
 
 .tambo-card {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 16px;
   padding: 1.25rem;
   margin-bottom: 0.75rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12), inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 12px rgba(31, 38, 135, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease;
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
   position: relative;
   overflow: hidden;
 }
 
 .tambo-card:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.18), inset 0 4px 30px rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 24px rgba(31, 38, 135, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .tambo-card__category {
@@ -677,8 +670,8 @@
 .tambo-suggestion-chip {
   flex-shrink: 0;
   padding: 0.4rem 0.85rem;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #F5F5F7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 100px;
   color: #6E6E73;
   font-family: 'Inter', sans-serif;
@@ -686,26 +679,21 @@
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.15s ease;
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
-  box-shadow: 0 4px 12px rgba(31, 38, 135, 0.08), inset 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .tambo-suggestion-chip:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: #FFFFFF;
   color: #A07D3A;
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 6px 16px rgba(31, 38, 135, 0.12), inset 0 4px 12px rgba(255, 255, 255, 0.3);
+  border-color: rgba(160, 125, 58, 0.2);
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.06);
 }
 
 /* ─── INPUT AREA ─── */
 .tambo-input-area {
   padding: 1rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
-  box-shadow: 0 -2px 8px rgba(31, 38, 135, 0.04);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 -1px 4px rgba(31, 38, 135, 0.03);
 }
 
 .tambo-input-wrapper {
@@ -805,13 +793,11 @@
 
 /* ─── CHART DISPLAY ─── */
 .tambo-chart {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 16px;
   padding: 1.25rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12), inset 0 4px 20px rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  box-shadow: 0 2px 12px rgba(31, 38, 135, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .tambo-chart__header h4 {
@@ -952,13 +938,11 @@
 
 /* ─── COMPARISON TABLE ─── */
 .tambo-comparison {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 16px;
   padding: 1.25rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12), inset 0 4px 20px rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  box-shadow: 0 2px 12px rgba(31, 38, 135, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .tambo-comparison__title {
@@ -1056,13 +1040,11 @@
 
 /* ─── STATS DASHBOARD ─── */
 .tambo-stats {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 16px;
   padding: 1.25rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12), inset 0 4px 20px rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  box-shadow: 0 2px 12px rgba(31, 38, 135, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .tambo-stats__header h4 {
