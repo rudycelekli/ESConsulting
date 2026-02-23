@@ -2,6 +2,90 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTambo, useTamboThreadInput } from '@tambo-ai/react';
 import '../styles/tambo.css';
 
+/**
+ * Lightweight markdown-to-React renderer.
+ * Handles: **bold**, *italic*, `code`, [links](url), unordered lists, paragraphs.
+ */
+function renderMarkdown(text: string): React.ReactNode {
+  // Split into paragraphs by double newline
+  const paragraphs = text.split(/\n{2,}/);
+
+  return paragraphs.map((para, pi) => {
+    const trimmed = para.trim();
+    if (!trimmed) return null;
+
+    // Check if this paragraph is a list (lines starting with - or *)
+    const lines = trimmed.split('\n');
+    const isList = lines.every((l) => /^\s*[-*]\s/.test(l) || !l.trim());
+
+    if (isList) {
+      return (
+        <ul key={pi} style={{ margin: '0.5em 0', paddingLeft: '1.5em' }}>
+          {lines
+            .filter((l) => l.trim())
+            .map((l, li) => (
+              <li key={li}>{renderInlineMarkdown(l.replace(/^\s*[-*]\s+/, ''))}</li>
+            ))}
+        </ul>
+      );
+    }
+
+    // Regular paragraph - render inline markdown
+    return (
+      <p key={pi} style={{ margin: '0.4em 0' }}>
+        {renderInlineMarkdown(trimmed.replace(/\n/g, ' '))}
+      </p>
+    );
+  });
+}
+
+/** Parse inline markdown: **bold**, *italic*, `code`, [link](url) */
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const tokens: React.ReactNode[] = [];
+  // Regex matches: **bold**, *italic*, `code`, [text](url)
+  const pattern = /(\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`|\[(.+?)\]\((.+?)\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(text)) !== null) {
+    // Push text before this match
+    if (match.index > lastIndex) {
+      tokens.push(text.slice(lastIndex, match.index));
+    }
+
+    if (match[2]) {
+      // **bold**
+      tokens.push(<strong key={`b-${match.index}`}>{match[2]}</strong>);
+    } else if (match[3]) {
+      // *italic*
+      tokens.push(<em key={`i-${match.index}`}>{match[3]}</em>);
+    } else if (match[4]) {
+      // `code`
+      tokens.push(
+        <code key={`c-${match.index}`} style={{ background: 'rgba(0,0,0,0.06)', padding: '0.15em 0.4em', borderRadius: '4px', fontSize: '0.9em' }}>
+          {match[4]}
+        </code>
+      );
+    } else if (match[5] && match[6]) {
+      // [text](url)
+      tokens.push(
+        <a key={`a-${match.index}`} href={match[6]} target="_blank" rel="noopener noreferrer" style={{ color: '#A07D3A', textDecoration: 'underline' }}>
+          {match[5]}
+        </a>
+      );
+    }
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Push remaining text
+  if (lastIndex < text.length) {
+    tokens.push(text.slice(lastIndex));
+  }
+
+  return tokens.length > 0 ? tokens : [text];
+}
+
 const SUGGESTIONS = [
   'What AI services do you offer?',
   'Show me a chart of AI market growth',
@@ -28,11 +112,11 @@ function renderContentBlocks(content: unknown): React.ReactNode[] {
     const nodes: React.ReactNode[] = [];
 
     content.forEach((block: any, i: number) => {
-      // Text content block
+      // Text content block — render markdown
       if (block?.type === 'text' && typeof block.text === 'string' && block.text.trim()) {
         nodes.push(
           <div key={`text-${i}`} className="tambo-message__text">
-            {block.text}
+            {renderMarkdown(block.text)}
           </div>
         );
       }
@@ -48,7 +132,7 @@ function renderContentBlocks(content: unknown): React.ReactNode[] {
       else if (typeof block === 'string' && block.trim()) {
         nodes.push(
           <div key={`str-${i}`} className="tambo-message__text">
-            {block}
+            {renderMarkdown(block)}
           </div>
         );
       }
@@ -56,7 +140,7 @@ function renderContentBlocks(content: unknown): React.ReactNode[] {
       else if (typeof block?.content === 'string' && block.content.trim()) {
         nodes.push(
           <div key={`cnt-${i}`} className="tambo-message__text">
-            {block.content}
+            {renderMarkdown(block.content)}
           </div>
         );
       }
@@ -67,17 +151,17 @@ function renderContentBlocks(content: unknown): React.ReactNode[] {
 
   // Handle plain string content
   if (typeof content === 'string' && content.trim()) {
-    return [<div key="text" className="tambo-message__text">{content}</div>];
+    return [<div key="text" className="tambo-message__text">{renderMarkdown(content)}</div>];
   }
 
   // Handle single object with text
   if (content && typeof content === 'object') {
     const c = content as any;
     if (typeof c.text === 'string' && c.text.trim()) {
-      return [<div key="text" className="tambo-message__text">{c.text}</div>];
+      return [<div key="text" className="tambo-message__text">{renderMarkdown(c.text)}</div>];
     }
     if (typeof c.content === 'string' && c.content.trim()) {
-      return [<div key="text" className="tambo-message__text">{c.content}</div>];
+      return [<div key="text" className="tambo-message__text">{renderMarkdown(c.content)}</div>];
     }
   }
 
