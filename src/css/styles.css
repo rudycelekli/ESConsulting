@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════
    ES CONSULTING — STYLES
-   Apple Liquid Glass: Crystal Light Theme + Gold Accent
+   Apple Liquid Glass: Crystal Light Theme + Indigo Accent
    ═══════════════════════════════════════════════════════ */
 
 /* ─── DESIGN TOKENS ─── */
@@ -12,12 +12,12 @@
   --color-base-400: #E8E8ED;
   --color-base-500: #D2D2D7;
 
-  /* Gold accent (refined for light backgrounds) */
-  --color-gold: #A07D3A;
-  --color-gold-light: #C49B4A;
-  --color-gold-bright: #D4AA52;
-  --color-gold-dim: rgba(160, 125, 58, 0.08);
-  --color-gold-glow: rgba(160, 125, 58, 0.15);
+  /* Indigo accent (harmonises with Liquid Glass blue-tinted shadows) */
+  --color-gold: #5856D6;
+  --color-gold-light: #7B79E8;
+  --color-gold-bright: #8F8DF0;
+  --color-gold-dim: rgba(88, 86, 214, 0.08);
+  --color-gold-glow: rgba(88, 86, 214, 0.15);
 
   /* Text */
   --color-text: #1D1D1F;
@@ -228,7 +228,7 @@ ul { list-style: none; }
 .btn--primary:hover {
   background: var(--color-gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(160, 125, 58, 0.25);
+  box-shadow: 0 8px 30px rgba(88, 86, 214, 0.25);
 }
 
 .btn--ghost {
@@ -351,7 +351,7 @@ ul { list-style: none; }
 
 .nav__cta:hover {
   background: var(--color-gold-light);
-  box-shadow: 0 4px 16px rgba(160, 125, 58, 0.25);
+  box-shadow: 0 4px 16px rgba(88, 86, 214, 0.25);
 }
 
 .nav__hamburger {
@@ -463,7 +463,7 @@ ul { list-style: none; }
 .hero__gradient-orb--1 {
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(196, 155, 74, 0.25), rgba(220, 180, 100, 0.08) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(123, 121, 232, 0.25), rgba(143, 141, 240, 0.08) 50%, transparent 70%);
   top: -25%;
   right: -15%;
   animation: aurora-drift-1 25s ease-in-out infinite alternate;
@@ -544,8 +544,8 @@ ul { list-style: none; }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(160, 125, 58, 0.4); }
-  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(160, 125, 58, 0); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(88, 86, 214, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(88, 86, 214, 0); }
 }
 
 .hero__title {
@@ -572,7 +572,7 @@ ul { list-style: none; }
 }
 
 .hero__title .word--accent {
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright), #D4AA52);
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright), #8F8DF0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -890,7 +890,7 @@ ul { list-style: none; }
 .bento__card--featured {
   grid-column: span 2;
   grid-row: span 1;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(160, 125, 58, 0.06));
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(88, 86, 214, 0.06));
   border-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -932,7 +932,7 @@ ul { list-style: none; }
   letter-spacing: 0.08em;
   padding: 0.3rem 0.75rem;
   border-radius: 100px;
-  border: 1px solid rgba(160, 125, 58, 0.2);
+  border: 1px solid rgba(88, 86, 214, 0.2);
   color: var(--color-gold);
   background: var(--color-gold-dim);
 }
@@ -1138,7 +1138,7 @@ ul { list-style: none; }
   gap: var(--gap);
   padding: 2.5rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(160, 125, 58, 0.04), rgba(255,255,255,0.15));
+  background: linear-gradient(135deg, rgba(88, 86, 214, 0.04), rgba(255,255,255,0.15));
   border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(2px) saturate(180%);
   -webkit-backdrop-filter: blur(2px) saturate(180%);

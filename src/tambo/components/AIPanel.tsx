@@ -69,7 +69,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
     } else if (match[5] && match[6]) {
       // [text](url)
       tokens.push(
-        <a key={`a-${match.index}`} href={match[6]} target="_blank" rel="noopener noreferrer" style={{ color: '#A07D3A', textDecoration: 'underline' }}>
+        <a key={`a-${match.index}`} href={match[6]} target="_blank" rel="noopener noreferrer" style={{ color: '#5856D6', textDecoration: 'underline' }}>
           {match[5]}
         </a>
       );

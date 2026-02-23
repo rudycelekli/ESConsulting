@@ -10,21 +10,21 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #A07D3A, #C49B4A);
+  background: linear-gradient(135deg, #5856D6, #7B79E8);
   border: none;
   cursor: pointer;
   z-index: 1098;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 24px rgba(160, 125, 58, 0.25), 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 24px rgba(88, 86, 214, 0.25), 0 0 1px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
   animation: tambo-fade-up 500ms ease 1500ms both;
 }
 
 .tambo-trigger:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 40px rgba(160, 125, 58, 0.35);
+  box-shadow: 0 8px 40px rgba(88, 86, 214, 0.35);
 }
 
 .tambo-trigger--hidden {
@@ -43,7 +43,7 @@
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 2px solid #C49B4A;
+  border: 2px solid #7B79E8;
   animation: tambo-pulse-ring 2s ease-out infinite;
 }
 
@@ -127,7 +127,7 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #A07D3A;
+  color: #5856D6;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -175,7 +175,7 @@
 .tambo-welcome__icon {
   width: 48px;
   height: 48px;
-  color: #A07D3A;
+  color: #5856D6;
   margin: 0 auto 1.5rem;
 }
 
@@ -205,7 +205,7 @@
 }
 
 .tambo-message--user .tambo-message__text {
-  background: #A07D3A;
+  background: #5856D6;
   color: #FFFFFF;
   padding: 0.75rem 1rem;
   border-radius: 16px 16px 4px 16px;
@@ -254,7 +254,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #A07D3A;
+  color: #5856D6;
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -297,7 +297,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #A07D3A;
+  background: #5856D6;
 }
 
 .tambo-card__tags {
@@ -316,14 +316,14 @@
   letter-spacing: 0.08em;
   padding: 0.2rem 0.6rem;
   border-radius: 100px;
-  border: 1px solid rgba(160, 125, 58, 0.2);
-  color: #A07D3A;
-  background: rgba(160, 125, 58, 0.06);
+  border: 1px solid rgba(88, 86, 214, 0.2);
+  color: #5856D6;
+  background: rgba(88, 86, 214, 0.06);
 }
 
 .tambo-card__relevance {
   font-size: 0.8rem;
-  color: #A07D3A;
+  color: #5856D6;
   font-style: italic;
   margin-top: 0.5rem;
   opacity: 0.8;
@@ -349,7 +349,7 @@
 }
 
 .tambo-metric__value--accent {
-  color: #A07D3A;
+  color: #5856D6;
 }
 
 .tambo-metric__label {
@@ -455,9 +455,9 @@
 }
 
 .tambo-timeline__phase--active .tambo-timeline__dot {
-  background: #A07D3A;
-  border-color: #A07D3A;
-  box-shadow: 0 0 8px rgba(160, 125, 58, 0.3);
+  background: #5856D6;
+  border-color: #5856D6;
+  box-shadow: 0 0 8px rgba(88, 86, 214, 0.3);
 }
 
 .tambo-timeline__line {
@@ -487,7 +487,7 @@
 
 .tambo-timeline__duration {
   font-size: 0.7rem;
-  color: #A07D3A;
+  color: #5856D6;
   font-weight: 500;
 }
 
@@ -526,10 +526,10 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #A07D3A;
+  color: #5856D6;
   margin-bottom: 0.5rem;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid rgba(160, 125, 58, 0.15);
+  border-bottom: 1px solid rgba(88, 86, 214, 0.15);
 }
 
 .tambo-tech-stack__item {
@@ -625,8 +625,8 @@
 }
 
 .tambo-form-input:focus {
-  border-color: #A07D3A;
-  box-shadow: 0 0 0 2px rgba(160, 125, 58, 0.1);
+  border-color: #5856D6;
+  box-shadow: 0 0 0 2px rgba(88, 86, 214, 0.1);
   background: #FFFFFF;
 }
 
@@ -641,7 +641,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: #FFFFFF;
-  background: #A07D3A;
+  background: #5856D6;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -649,7 +649,7 @@
 }
 
 .tambo-form-submit:hover {
-  background: #C49B4A;
+  background: #7B79E8;
   transform: translateY(-1px);
 }
 
@@ -681,8 +681,8 @@
 
 .tambo-suggestion-chip:hover {
   background: #FFFFFF;
-  color: #A07D3A;
-  border-color: rgba(160, 125, 58, 0.2);
+  color: #5856D6;
+  border-color: rgba(88, 86, 214, 0.2);
   box-shadow: 0 2px 8px rgba(31, 38, 135, 0.06);
 }
 
@@ -713,8 +713,8 @@
 }
 
 .tambo-input-field:focus {
-  border-color: #A07D3A;
-  box-shadow: 0 0 0 2px rgba(160, 125, 58, 0.1);
+  border-color: #5856D6;
+  box-shadow: 0 0 0 2px rgba(88, 86, 214, 0.1);
   background: #FFFFFF;
 }
 
@@ -727,7 +727,7 @@
   align-items: center;
   justify-content: center;
   border: none;
-  background: #A07D3A;
+  background: #5856D6;
   color: #FFFFFF;
   border-radius: 12px;
   cursor: pointer;
@@ -736,7 +736,7 @@
 }
 
 .tambo-input-send:hover:not(:disabled) {
-  background: #C49B4A;
+  background: #7B79E8;
   transform: scale(1.05);
 }
 
@@ -777,7 +777,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #A07D3A;
+  background: #5856D6;
   animation: tambo-dot-bounce 1.4s ease-in-out infinite;
 }
 
@@ -875,7 +875,7 @@
 
 .tambo-chart__point-label {
   font-size: 9px;
-  fill: #A07D3A;
+  fill: #5856D6;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
 }
@@ -981,8 +981,8 @@
 .tambo-comparison__col-header small { display: block; font-size: 0.7rem; color: #86868B; font-weight: 400; margin-top: 0.15rem; }
 
 .tambo-comparison__col-header--hl {
-  color: #A07D3A;
-  background: rgba(160, 125, 58, 0.04);
+  color: #5856D6;
+  background: rgba(88, 86, 214, 0.04);
   border-radius: 10px 10px 0 0;
 }
 
@@ -993,9 +993,9 @@
   letter-spacing: 0.08em;
   padding: 0.15rem 0.5rem;
   border-radius: 100px;
-  border: 1px solid rgba(160, 125, 58, 0.2);
-  color: #A07D3A;
-  background: rgba(160, 125, 58, 0.06);
+  border: 1px solid rgba(88, 86, 214, 0.2);
+  color: #5856D6;
+  background: rgba(88, 86, 214, 0.06);
   margin-top: 0.35rem;
 }
 
@@ -1015,7 +1015,7 @@
 }
 
 .tambo-comparison__cell--hl {
-  background: rgba(160, 125, 58, 0.03);
+  background: rgba(88, 86, 214, 0.03);
 }
 
 .tambo-comparison__icon {
